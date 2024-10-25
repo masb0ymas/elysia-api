@@ -1,0 +1,42 @@
+{
+  "name": "elysia-app",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "bun run --watch src/main.ts",
+    "start": "bun run --watch dist/main.js",
+    "clean": "rimraf dist",
+    "prebuild": "bun run clean",
+    "build": "bun build src/main.ts --target bun --outdir ./dist",
+    "prebuild:tsc": "bun run clean",
+    "build:tsc": "tsc && tsc-alias",
+    "serve": "NODE_ENV=production bun dist/main.js",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@bogeychan/elysia-logger": "^0.1.4",
+    "@elysiajs/cors": "^1.1.1",
+    "@elysiajs/static": "^1.1.1",
+    "@elysiajs/swagger": "^1.1.5",
+    "axios": "^1.7.7",
+    "date-fns": "^4.1.0",
+    "elysia": "latest",
+    "lodash": "^4.17.21",
+    "pg": "^8.13.0",
+    "pg-hstore": "^2.3.4",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0",
+    "reflect-metadata": "^0.2.2",
+    "rimraf": "^6.0.1",
+    "typeorm": "^0.3.20",
+    "typeorm-extension": "^3.6.2",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.12",
+    "@types/uuid": "^10.0.0",
+    "bun-types": "latest",
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.6.3"
+  },
+  "module": "src/main.js"
+}
